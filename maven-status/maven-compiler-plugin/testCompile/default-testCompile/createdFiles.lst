@@ -1,4 +1,4 @@
-standard/model/Operation.class
-standard/view/CalculatorGraphicTest.class
-standard/utils/NodesInformation.class
-standard/model/CalculationTest.class
+calculator/utils/NodesInformation.class
+calculator/model/Operation.class
+calculator/model/CalculationTest.class
+calculator/view/CalculatorGraphicTest.class

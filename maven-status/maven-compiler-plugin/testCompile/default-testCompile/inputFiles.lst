@@ -1,4 +1,4 @@
-/Users/luqquang/IdeaProjects/calc/src/test/java/standard/model/Operation.java
-/Users/luqquang/IdeaProjects/calc/src/test/java/standard/utils/NodesInformation.java
-/Users/luqquang/IdeaProjects/calc/src/test/java/standard/model/CalculationTest.java
-/Users/luqquang/IdeaProjects/calc/src/test/java/standard/view/CalculatorGraphicTest.java
+/Users/luqquang/IdeaProjects/calc/src/test/java/calculator/view/CalculatorGraphicTest.java
+/Users/luqquang/IdeaProjects/calc/src/test/java/calculator/model/Operation.java
+/Users/luqquang/IdeaProjects/calc/src/test/java/calculator/model/CalculationTest.java
+/Users/luqquang/IdeaProjects/calc/src/test/java/calculator/utils/NodesInformation.java
