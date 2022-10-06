@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="322.0" stylesheets="@stylesheet/standard_calc.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="standard.controller.CalculatorController">
+    <children>
+        <VBox id="root-anc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="322.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox id="hbox-toolbar" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="322.0">
+                    <children>
+                        <AnchorPane id="toolbar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="324.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Button id="iconify_btn" layoutX="184.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="45.0" styleClass="titlebar-btn" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="0.0" />
+                                <Button id="maximize_btn" layoutX="229.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="46.0" styleClass="titlebar-btn" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="0.0" />
+                                <Pane layoutX="277.0" prefHeight="31.0" prefWidth="46.0" styleClass="close_btn" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Button id="close_btn" alignment="TOP_RIGHT" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="21.0" prefWidth="39.0" style="-fx-padding: -3 7 0 0;" styleClass="close_btn" text="×" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="Times New Roman" size="26.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <padding>
+                                        <Insets right="3.0" top="5.0" />
+                                    </padding>
+                                </Pane>
+                                <Pane id="title_bar" layoutY="4.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="142.0">
+                                    <children>
+                                        <Label id="title" layoutX="13.0" layoutY="3.0" text="Calculator">
+                                            <font>
+                                                <Font name="Segoe UI Semilight" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <HBox id="hbox-opt" fillHeight="false" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="414.0" prefWidth="322.0">
+                    <children>
+                        <AnchorPane prefWidth="322.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Button id="opt_btn" maxHeight="Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="45.0" styleClass="opt_btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets bottom="10.0" />
+                                    </padding>
+                                </Button>
+                                <Label id="name" layoutX="45.0" layoutY="8.0" prefHeight="27.0" prefWidth="83.0" text="Standard" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="8.0">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Button id="clock_btn" layoutX="279.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" styleClass="opt_btn" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <HBox id="hbox-display" fillHeight="false" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="91.0" prefWidth="322.0">
+                    <children>
+                        <AnchorPane prefHeight="91.0" prefWidth="596.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label id="mainLabel" fx:id="mainLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="24.0" prefHeight="67.0" prefWidth="302.0" style="-fx-padding: 0;" text="0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="24.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="45.0" />
+                                    </font>
+                                </Label>
+                                <AnchorPane id="history-anc" layoutX="11.0" minHeight="0.0" minWidth="0.0" prefHeight="40.0" prefWidth="298.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">
+                                    <children>
+                                        <ScrollPane id="history-scroll" layoutX="8.0" maxHeight="37.0" prefHeight="30.0" prefWidth="302.0" vbarPolicy="NEVER" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                                            <content>
+                                                <AnchorPane prefHeight="23.0" prefWidth="296.0">
+                                                    <children>
+                                                        <Label id="history-label" fx:id="historyLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="290.0" style="-fx-background-color: #E6E6E6;" textAlignment="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+                                                            <font>
+                                                                <Font name="Segoe UI Semilight" size="15.0" />
+                                                            </font>
+                                                            <opaqueInsets>
+                                                                <Insets />
+                                                            </opaqueInsets>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                            <padding>
+                                                <Insets left="3.0" right="3.0" />
+                                            </padding>
+                                        </ScrollPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <HBox id="hbox-memory" fillHeight="false" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0">
+                    <children>
+                        <AnchorPane id="mc2">
+                            <HBox.margin>
+                                <Insets left="5.0" right="6.0" />
+                            </HBox.margin>
+                            <children>
+                                <Button id="mc" fx:id="memoryClearBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#memoryClear" prefHeight="27.0" prefWidth="47.0" stylesheets="@stylesheet/standard_calc.css" text="MC" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="memory" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane id="mr2">
+                            <HBox.margin>
+                                <Insets right="6.0" />
+                            </HBox.margin>
+                            <children>
+                                <Button id="mr" fx:id="memoryRBtn" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#pickFromMemory" prefHeight="27.0" prefWidth="47.0" stylesheets="@stylesheet/standard_calc.css" text="MR" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="memory" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane id="m-plus2">
+                            <HBox.margin>
+                                <Insets right="6.0" />
+                            </HBox.margin>
+                            <children>
+                                <Button id="m-plus" fx:id="memoryAddBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#memoryPlus" prefHeight="27.0" prefWidth="47.0" stylesheets="@stylesheet/standard_calc.css" text="M+" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="memory" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane id="m-minus2">
+                            <HBox.margin>
+                                <Insets right="6.0" />
+                            </HBox.margin>
+                            <children>
+                                <Button id="m-minus" fx:id="memorySubstactBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#memoryMinus" prefHeight="27.0" prefWidth="47.0" stylesheets="@stylesheet/standard_calc.css" text="M-" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="memory" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane id="ms2">
+                            <HBox.margin>
+                                <Insets right="6.0" />
+                            </HBox.margin>
+                            <children>
+                                <Button id="ms" fx:id="memorySBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" stylesheets="@stylesheet/standard_calc.css" text="MS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="memory" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane id="m2">
+                            <children>
+                                <Button id="m" fx:id="memoryBtn" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" stylesheets="@stylesheet/standard_calc.css" text="M" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="memory" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+                <HBox id="hbox1" fillHeight="false" layoutY="202.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <AnchorPane id="btn-percent2" prefWidth="82.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-percent" fx:id="buttonPercent" layoutX="40.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonPercent" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe MDL2 Assets" size="16.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets left="4.0" right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-sqrt2" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-sqrt" fx:id="buttonSqrt" layoutX="120.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSqrt" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe MDL2 Assets" size="16.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-square2" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-square" fx:id="buttonSquare" layoutX="200.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSquare" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="x²" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Times New Roman Italic" size="20.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-1x2" prefWidth="83.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-1x" fx:id="button1x" layoutX="3.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button1x" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="¹⁄x" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <font>
+                                        <Font name="Times New Roman Italic" size="20.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+                <HBox id="hbox2" fillHeight="false" layoutY="251.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <AnchorPane id="btn-ce2" prefWidth="82.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-ce" fx:id="buttonCE" layoutX="40.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonCE" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="CE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI" size="16.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets left="4.0" right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-c2" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-c" fx:id="buttonC" layoutX="120.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonC" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="C" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI" size="16.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-undo2" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-undo" fx:id="buttonBackspace" layoutX="200.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonBackspace" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe MDL2 Assets" size="16.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-divide2" prefWidth="83.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-divide" fx:id="buttonDivide" layoutX="280.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonDivide" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="÷" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spl-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Times New Roman" size="30.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+                <HBox id="hbox3" fillHeight="false" layoutY="300.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <AnchorPane id="btn-72" prefWidth="82.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-7" fx:id="button7" ellipsisString="" graphicTextGap="0.0" layoutX="40.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button7OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="7" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets left="4.0" right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-82" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-8" fx:id="button8" layoutX="120.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button8OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-92" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-9" fx:id="button9" layoutX="200.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button9OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="9" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-multiply2" prefWidth="83.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-multiply" fx:id="buttonMultiply" layoutX="280.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonMultiply" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="×" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spl-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Times New Roman" size="30.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+                <HBox id="hbox4" fillHeight="false" layoutY="349.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <AnchorPane id="btn-42">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-4" fx:id="button4" layoutX="40.0" layoutY="395.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button4OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets left="4.0" right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-52">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-5" fx:id="button5" layoutX="120.0" layoutY="395.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button5OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-62">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-6" fx:id="button6" layoutX="200.0" layoutY="395.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button6OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-minus2" prefWidth="83.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-minus" fx:id="buttonMinus" layoutX="280.0" layoutY="395.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonMinus" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="—" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spl-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+                <HBox id="hbox5" fillHeight="false" layoutY="398.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <AnchorPane id="btn-12">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-1" fx:id="button1" layoutX="40.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button1OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets left="4.0" right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-22" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-2" fx:id="button2" layoutX="120.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button2OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-32" prefWidth="78.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-3" fx:id="button3" layoutX="200.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button3OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="3" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-plus2" prefWidth="83.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-plus" fx:id="buttonPlus" layoutX="280.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonPlus" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="+" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spl-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Times New Roman Italic" size="27.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+                <HBox id="hbox6" fillHeight="false" layoutY="447.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <AnchorPane id="btn-negate2">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-negate" fx:id="buttonNegate" layoutX="40.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonNegate" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="±" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semilight" size="24.0" />
+                                    </font>
+                                    <opaqueInsets>
+                                        <Insets right="5.0" />
+                                    </opaqueInsets>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets left="4.0" right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-02">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-0" fx:id="button0OnAction" layoutX="120.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#button0OnAction" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="number" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-dot2">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-dot" fx:id="buttonDot" layoutX="200.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonDot" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font name="Segoe UI Black" size="16.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="spec-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="2.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                        <AnchorPane id="btn-equals2" prefWidth="83.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <children>
+                                <Button id="btn-equals" fx:id="buttonEquals" layoutX="280.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonEquals" prefHeight="47.0" prefWidth="76.0" stylesheets="@stylesheet/standard_calc.css" text="=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <styleClass>
+                                        <String fx:value="spl-operator" />
+                                        <String fx:value="btn" />
+                                    </styleClass>
+                                    <font>
+                                        <Font name="Times New Roman" size="30.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" top="2.0" />
+                            </padding>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+        <AnchorPane id="option-tab" layoutY="31.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="255.0" style="-fx-background-color: #F0F0F0;" translateX="-255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="30.0">
+            <children>
+                <Pane layoutY="424.0" prefHeight="37.0" prefWidth="255.0" styleClass="memory" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ImageView id="about" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="68.0" text="About">
+                            <font>
+                                <Font name="Segoe UI" size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button id="opt_btn2" maxHeight="Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="45.0" styleClass="opt_btn">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding>
+                </Button>
+                <ScrollPane id="option-scroll" layoutY="54.0" prefHeight="370.0" prefWidth="255.0" styleClass="scroll" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="54.0">
+                    <content>
+                        <AnchorPane prefHeight="520.0" prefWidth="240.0">
+                            <children>
+                                <Label id="opt" layoutX="10.0" layoutY="5.0" prefHeight="37.0" prefWidth="88.0" text="Calculator">
+                                    <font>
+                                        <Font name="Segoe UI Black" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Pane layoutY="40.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="standard" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Standard">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="81.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="scientific" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Scientific">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="122.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="programmer" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Programmer">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="163.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="date" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Date Calculation">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Label id="opt" layoutX="10.0" layoutY="204.0" prefHeight="37.0" prefWidth="100.0" text="Converter">
+                                    <font>
+                                        <Font name="Segoe UI Black" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Pane layoutY="240.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="currency" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Currency">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="281.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="volume" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Volume">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="322.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="length" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Length">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="363.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="weight" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Weight and Mass">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="404.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="temperature" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Temperature">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="445.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="energy" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Energy">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="486.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="area" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Area">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="527.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="speed" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Speed">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="568.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="time" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Time">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="609.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="power" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Power">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="660.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="data" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Data">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="701.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="pressure" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Pressure">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutY="742.0" prefHeight="41.0" prefWidth="240.0" styleClass="memory">
+                                    <children>
+                                        <ImageView id="angle" fitHeight="27.0" fitWidth="25.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="53.0" layoutY="6.0" prefHeight="27.0" prefWidth="180.0" text="Angle">
+                                            <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane id="history-tab" layoutY="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="322.0" style="-fx-background-color: #F0F0F0;" translateY="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label id="mHistory" layoutX="21.0" layoutY="26.0" text="There's no history yet" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="26.0">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane id="memory-tab" layoutY="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="322.0" style="-fx-background-color: #F0F0F0;" translateY="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label id="memory-empty" fx:id="memoryMessageLabel" alignment="TOP_LEFT" prefHeight="43.0" prefWidth="279.0" text="There's nothing saved in memory" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="15.0" />
+                    </font>
+                </Label>
+                <AnchorPane id="memory-pane" fx:id="memoryBox" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#pickFromMemory" prefHeight="91.0" prefWidth="322.0" styleClass="memory" stylesheets="@stylesheet/standard_calc.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+                    <children>
+                        <Label id="memoryLabel" fx:id="memoryLabel" alignment="TOP_RIGHT" layoutY="10.0" prefHeight="43.0" prefWidth="279.0" text="0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="5.0">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="25.0" />
+                            </font>
+                        </Label>
+                        <Button id="mmc" layoutX="150.0" layoutY="54.0" mnemonicParsing="false" onMouseReleased="#memoryClear" prefWidth="45.0" styleClass="main-memory-btn" stylesheets="@stylesheet/standard_calc.css" text="MC" AnchorPane.rightAnchor="115.0">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button id="main-memory-plus" layoutX="207.0" layoutY="54.0" mnemonicParsing="false" onMousePressed="#memoryPlus" prefWidth="45.0" styleClass="main-memory-btn" stylesheets="@stylesheet/standard_calc.css" text="M+" AnchorPane.rightAnchor="65.0">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button id="main-memory-substract" layoutX="272.0" layoutY="54.0" mnemonicParsing="false" onMousePressed="#memoryMinus" prefWidth="45.0" styleClass="main-memory-btn" stylesheets="@stylesheet/standard_calc.css" text="M-" AnchorPane.rightAnchor="15.0">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
