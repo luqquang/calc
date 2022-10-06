@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.util.WaitForAsyncUtils;
@@ -64,6 +66,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testWindowsDrag() {
       testDrag(100, 20, 9, 8);
       testDrag(165, 20, 74, 8);
@@ -152,6 +155,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testResize() {
       testWestResize(30, 352, 81, 47);
       testWestResize(50, 372, 87, 47);
@@ -281,6 +285,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testAdd() {
       testExpression("=======+==+=+=+=+=+=+=+++=", "0", "", "0");
       testExpression("1+++++++++=", "2", "", "0");
@@ -325,6 +330,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testSubstract() {
       testExpression("5-", "5", "5 - ", "0");
       testExpression("5--", "5", "5 - ", "0");
@@ -368,6 +374,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testMultiply() {
       testExpression("5×", "5", "5 × ", "0");
       testExpression("5××", "5", "5 × ", "0");
@@ -411,6 +418,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testDivide() {
       testExpression("5÷", "5", "5 ÷ ", "0");
       testExpression("5÷÷", "5", "5 ÷ ", "0");
@@ -448,6 +456,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testSqrt() {
       //SQRT
       testExpression("0√", "0", "√(0)", "0");
@@ -478,6 +487,7 @@ class CalculatorGraphicTest extends ApplicationTest {
 
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testSquare() {
       //SQUARE
       testExpression("0 sqr", "0", "sqr(0)", "0");
@@ -504,6 +514,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testNegate() {
       //NEGATE
       testExpression("0±", "0", "", "0");
@@ -538,6 +549,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testFraction() {
       //FACTORIAL
       testExpression("463 1/x ", "0.0021598272138229", "1/(463)", "0");
@@ -566,6 +578,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testPercent() {
       //PERCENT
       testExpression("0%", "0", "0", "0");
@@ -585,6 +598,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testClearEnter() {
       //CLEAR ENTER
       testExpression("200 ce", "0", "", "0");
@@ -608,6 +622,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testPeriod() {
       //PERIOD
       testExpression("3 1/x +2=", "2.333333333333333", "", "0");
@@ -625,7 +640,9 @@ class CalculatorGraphicTest extends ApplicationTest {
       testExpression("2.000000000000001+8=", "10", "", "0");
 
    }
+
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testDivideByZero() {
       //Divide by zero
       testExpression("0 1/x", "Cannot divide by zero", "1/(0)", "0");
@@ -645,6 +662,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testInvalidInput() {
       //Square root of negative number
       testExpression("100 - = = √", "Invalid input", "√(-100)", "0");
@@ -658,6 +676,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testMemory() {
       //ADD
       testExpression("500 m+ mr", "500", "", "500");
@@ -702,6 +721,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testHotkeys() {
       testNumHotkey("0", VK_0);
       testNumHotkey("0.", VK_DECIMAL);
@@ -739,6 +759,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testMemoryPopUpWindow() {
       clickOnNode("#btn-8");
       clickOnNode("#m-plus");
@@ -766,6 +787,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testHistoryPopUpWindow() {
       clickOnFx("#clock_btn");
       verifyThat("#mHistory", hasText("There's no history yet"));
@@ -773,6 +795,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testOptionalPopUpWindow() {
       clickOnFx("#opt_btn");
       verifyThat("#opt", hasText("Calculator"));
@@ -780,6 +803,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testWindowButtons() throws TimeoutException {
       clickOnNode("#close_btn");
       assertFalse(primaryStage.isShowing());
@@ -794,6 +818,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testHistoryScroll() {
       clickOnNode("#btn-2");
       for (int i = 0; i < 15; i++) {
@@ -813,6 +838,7 @@ class CalculatorGraphicTest extends ApplicationTest {
    }
 
    @Test
+   @EnabledOnOs(OS.WINDOWS)
    void testOptionalScroll() {
       ScrollPane scrollPane = lookup("#option-scroll").query();
       int border = 3;

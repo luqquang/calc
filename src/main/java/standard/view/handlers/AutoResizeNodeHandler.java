@@ -134,6 +134,11 @@ public class AutoResizeNodeHandler {
       labelResizeAndScrollProperty();
    }
 
+   public void hideResizeBar() {
+      HBox toolbarHBox = (HBox) rootVBox.lookup(TOOLBAR_HBOX_SELECTOR);
+      toolbarHBox.setVisible(false);
+   }
+
    /**
     * Method calls auto-resize for
     * HBoxes: main, menu, memory
