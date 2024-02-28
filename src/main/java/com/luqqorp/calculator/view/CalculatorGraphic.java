@@ -20,7 +20,7 @@ import static java.util.Objects.requireNonNull;
 import static org.apache.commons.lang3.StringUtils.containsIgnoreCase;
 
 /**
- * This class manages all of the graphical user interface properties
+ * This class manages all the graphical user interface properties
  */
 public class CalculatorGraphic {
     public static final String CALCULATOR_ICON_PNG = "calculator-icon.png";
